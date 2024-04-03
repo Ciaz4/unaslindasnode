@@ -1,6 +1,6 @@
 const mongoose = require("../config/database");
 
-const schemaProducto = new mongoose.Schem({
+const schemaProducto = new mongoose.Schema({
     referencia: {
         type: String,
         required: [true , "La referencia es obligatoria"]
