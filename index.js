@@ -11,13 +11,7 @@ app.use(logger('dev'));
 app.use(exp.urlencoded({extended: false}));
 app.use(exp.json())
 
-app.get('/productos', async (req,res)=>{
-    let listadoProductos = await modeloProducto.find();
-    if(listadoProductos)
-        res.status(200).json(listadoProductos);
-    else
-        res.status(404).json({message: "No se encontraron productos"});    
-});
+
 
 app.get('/productos/:ref', async (req, res)=>{
     let productoEncontrado = await modeloProducto.findOne({referencia:req.params.ref});
